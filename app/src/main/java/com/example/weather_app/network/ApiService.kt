@@ -12,7 +12,7 @@ import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
 private const val BASE_URL = "https://api.openweathermap.org/"
-const val API = "383bc0eedf0e53f145fcbb7144d8a6b5"
+const val API = "Weather_API_Key"
 class ApiService {
     interface WeatherService {
         // Get weather
