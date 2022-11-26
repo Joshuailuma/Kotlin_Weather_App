@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="property"
+            type="com.example.weather_app.network.WeatherProperty" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:shadowColor="#FF32"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="@dimen/normal_16"
+        app:cardElevation="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_gravity="start">
+
+            <TextView
+                android:id="@+id/weather_temp_gridView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="4dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:toCelsius="@{property}"
+                tools:text="30" />
+
+            <ImageView
+                android:id="@+id/image_gridView"
+                android:layout_width="56dp"
+                android:layout_height="41dp"
+                android:layout_margin="5dp"
+                app:imageUrl="@{property}"
+                app:layout_constraintStart_toEndOf="@id/weather_temp_gridView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/loading_animation"
+                android:contentDescription="@string/an_image" />
+
+            <TextView
+                android:id="@+id/place_gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="316dp"
+                android:padding="4dp"
+                android:text="@{property.name}"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@id/weather_temp_gridView"
+                tools:text="Benin" />
+
+            <TextView
+                android:id="@+id/weather_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="5dp"
+                android:padding="4dp"
+                android:text="@{property.description}"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/place_gridView"
+                tools:text="Sunny" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
