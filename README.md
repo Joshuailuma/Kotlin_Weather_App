@@ -1,5 +1,6 @@
 # Kotlin_Weather_App
-A weather app made using Kotlin
+
+Please use your API key
 
 ![alt text](https://github.com/Joshuailuma/Kotlin_Weather_App/blob/master/home.png?raw=true)
 
